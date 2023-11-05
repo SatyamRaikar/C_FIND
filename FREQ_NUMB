@@ -1,0 +1,50 @@
+***********************************************************************************************************************************************************************************************
+                PROGRAM TO FIND A NUMBER AND ITS FREQUENCY IN ARRAY
+*************************************************************************************************************************************************************************************************
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{ int* ptr;
+  int n,a,count,b,i;
+   printf("please enter the size of number data: ");
+   scanf("%d",&n);
+   ptr=(int*)malloc(n*sizeof(int));
+   if(ptr==NULL)
+   {
+       printf("memory is not allocated ");
+   }
+   else
+   {
+       
+       for(i=0;i<n;i++)
+       {
+           printf("please enter the value for index %d:",i);
+           scanf("%d",&b);
+           ptr[i]=b;
+       }
+       printf("entered values are:");
+       for(i=0;i<n;i++)
+       {
+           printf("%d",ptr[i]);
+       }
+   }
+   
+  printf("please enter the value you want to search in the array:");
+  scanf("%d",&a);
+  for(i=0;i<n;i++)
+       {
+           if(ptr[i]==a)
+           {
+               count++;
+           }
+       }
+       if(count==0)
+       {
+           printf("%d is not present in the given array",a);
+       }
+       else
+       {
+           printf("%d is present %d times in the array",a,count);
+       }
+    return 0;
+}
